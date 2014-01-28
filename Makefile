@@ -1,14 +1,15 @@
-.PHONY: all
-all: hero.so equipment.so
 
+hero.o: hero.h hero.c
+	gcc -c hero.c -Wall
 
-hero.so: hero.h hero.c
-	gcc hero.c -o hero.so -fPIC -shared -Wall -lm
+equipment.o: equipment.h equipment.c
+	gcc -c equipment.c -Wall
 
-equipment.so: equipment.h equipment.c
-	gcc equipment.c -o equipment.so -fPIC -shared -Wall
+sanguo.so: hero.o equipment.o
+	gcc hero.o equipment.o -o sanguo.so -fPIC -shared -lm
+
 
 .PHONY: clean
 clean:
-	-rm -f hero.so
+	-rm -f hero.o equipment.o sanguo.so
 
