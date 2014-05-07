@@ -8,12 +8,12 @@ class Hero
         static const int modulus_defense = 15;
         static const int modulus_hp = 45;
 
-        static int _calculate(int, int, int, float);
+        static int _calculate(int, int, int,int, float);
 
     public:
-        static int attack(int, int, float);
-        static int defense(int, int, float);
-        static int hp(int, int ,float);
+        static int attack(int, int, int, float);
+        static int defense(int, int, int, float);
+        static int hp(int, int, int, float);
 };
 
 class Equipment
