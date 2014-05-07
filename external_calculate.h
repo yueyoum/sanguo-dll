@@ -1,5 +1,3 @@
-#include <math.h>
-
 class Hero
 {
     private:
